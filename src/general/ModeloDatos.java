@@ -1,3 +1,10 @@
+package general;
+
+import clases.Paciente;
+import empleado.EmpleadoEventual;
+import empleado.EmpleadoPlanilla;
+import empleado.Medico;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 

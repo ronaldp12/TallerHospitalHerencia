@@ -1,3 +1,8 @@
+package general;
+
+import clases.Paciente;
+import empleado.Medico;
+
 import javax.swing.*;
 
 public class CitaMedica {
@@ -47,7 +52,7 @@ public class CitaMedica {
     }
 
     public void imprimirCitaMedica(){
-        System.out.println("Nombre del Paciente:" + paciente.getNombre());
+        System.out.println("Nombre del clases.Paciente:" + paciente.getNombre());
         System.out.println("Nombre del medico:" + medico.getNombre());
         System.out.println("Servicio:" + servicio);
         System.out.println("Fecha de la cita:" + fechaCita);

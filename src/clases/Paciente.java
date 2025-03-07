@@ -1,7 +1,8 @@
-import javax.swing.*;
-import java.util.Date;
+package clases;
 
-public class Paciente extends Persona{
+import javax.swing.*;
+
+public class Paciente extends Persona {
 
     private int numHistoriaClinica;
     private String sexo;

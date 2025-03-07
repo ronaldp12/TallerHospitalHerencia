@@ -1,5 +1,8 @@
+package empleado;
+
+import clases.Persona;
+
 import javax.swing.*;
-import java.util.Date;
 
 public class Empleado extends Persona {
 
@@ -64,7 +67,7 @@ public class Empleado extends Persona {
 
     public void ImprimirDatosEmpleado(){
         super.imprimirDatosPersona();
-        System.out.println("Codigo Empleado:"+codEmpleado);
+        System.out.println("Codigo empleado.Empleado:"+codEmpleado);
         System.out.println("Numero Horas Extras:"+numHorasExtras);
         System.out.println("Fecha Ingreso:"+fechaIngreso);
         System.out.println("Area:"+area);

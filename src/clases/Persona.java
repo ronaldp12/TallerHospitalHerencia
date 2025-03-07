@@ -1,5 +1,6 @@
+package clases;
+
 import javax.swing.*;
-import java.util.Date;
 
 public class Persona {
 

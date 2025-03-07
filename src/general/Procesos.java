@@ -1,3 +1,10 @@
+package general;
+
+import clases.Paciente;
+import empleado.EmpleadoEventual;
+import empleado.EmpleadoPlanilla;
+import empleado.Medico;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -19,8 +26,8 @@ public class Procesos {
             opcion = Integer.parseInt(JOptionPane.showInputDialog("Menu Hospital" +
                     "\n1. Registrar empleado por planilla" +
                     "\n2. Registrar empleado de forma eventual" +
-                    "\n3. Registrar Medico" +
-                    "\n4. Registrar Paciente" +
+                    "\n3. Registrar empleado.Medico" +
+                    "\n4. Registrar clases.Paciente" +
                     "\n5. Registrar Cita medica" +
                     "\n6. Imprimir empleado planilla" +
                     "\n7. Imprimir empleado de forma eventual" +

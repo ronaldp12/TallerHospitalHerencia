@@ -1,6 +1,6 @@
+package empleado;
+
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Date;
 
 public class Medico extends EmpleadoPlanilla {
 
