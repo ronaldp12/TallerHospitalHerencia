@@ -14,29 +14,91 @@ public class Procesos {
 
     ArrayList<CitaMedica> citasMedicas=new ArrayList<>();
     ModeloDatos modeloDatos;
-    int opcion=0;
+    int opcion=0, opcion2=0, opcion3=0;
 
     public Procesos(){
 
         modeloDatos= new ModeloDatos();
 
         do {
-            opcion = Integer.parseInt(JOptionPane.showInputDialog("Menu Hospital" +
-                    "\n1. Registrar empleado por planilla" +
-                    "\n2. Registrar empleado de forma eventual" +
-                    "\n3. Registrar empleado.Medico" +
-                    "\n4. Registrar clases.Paciente" +
-                    "\n5. Registrar Cita medica" +
-                    "\n6. Imprimir empleado planilla" +
-                    "\n7. Imprimir empleado de forma eventual" +
-                    "\n8. Imprimir medico" +
-                    "\n9. Imprimir paciente" +
-                    "\n10. Imprimir cita medica" +
-                    "\n11. Salir"));
+            opcion=menuPrincipal();
             eleccionRegistro(opcion);
 
-        }while(opcion!=11);
+        }while(opcion!=8);
 
+    }
+
+    public int menuPrincipal(){
+
+        return opcion = Integer.parseInt(JOptionPane.showInputDialog("Menu Hospital" +
+                "\n1. Registrar empleado por planilla" +
+                "\n2. Registrar empleado de forma eventual" +
+                "\n3. Registrar Medico" +
+                "\n4. Registrar Paciente" +
+                "\n5. Registrar Cita medica" +
+                "\n6. Menu Imprimir" +
+                "\n7. Menu Consultar"+
+                "\n8. Salir"));
+    }
+
+    public void menuImprimir(){
+         opcion2=Integer.parseInt(JOptionPane.showInputDialog("Menu Imprimir" +
+                "\n1. Imprimir empleado planilla" +
+                "\n2. Imprimir empleado de forma eventual" +
+                "\n3. Imprimir medico" +
+                "\n4. Imprimir paciente" +
+                "\n5. Imprimir cita medica"+
+                "\n6. Volver al menu anterior"));
+
+        switch (opcion2){
+            case 1:
+                modeloDatos.mostrarEmpleadoPlanilla();
+                modeloDatos.mostrarMedico();
+                break;
+            case 2:
+                modeloDatos.mostrarEmpleadoEventual();
+                break;
+            case 3:
+                modeloDatos.mostrarMedico();
+                break;
+            case 4:
+                modeloDatos.mostrarPaciente();
+                break;
+            case 5:
+                modeloDatos.mostrarCitaMedica();
+                break;
+            case 6:
+                break;
+            default:System.out.println("Ingresa una opcion valida");
+        }
+    }
+
+    public void menuConsultar(){
+        opcion3=Integer.parseInt(JOptionPane.showInputDialog("Menu Consultar" +
+                "\n1. Consultar Paciente por DNI" +
+                "\n2. Consultar Empleado Eventual por DNI" +
+                "\n3. Consultar Empleado por Planilla por DNI" +
+                "\n4. Consultar Medico por DNI " +
+                "\n5. Volver al menu anterior"));
+
+        switch (opcion3){
+            case 1:
+                modeloDatos.consultarPacienteDocumento();
+                break;
+            case 2:
+                modeloDatos.consultarEmpEventualDocumento();
+                break;
+            case 3:
+                modeloDatos.consultarEmpPlanillaDocumento();
+                break;
+            case 4:
+                modeloDatos.consultarMedicoDocumento();
+                break;
+            case 5:
+                break;
+            default:System.out.println("Ingrese una opcion valida");
+                break;
+        }
     }
 
     public void pedirDatosEmpleadoEventual(){
@@ -102,23 +164,13 @@ public class Procesos {
                     programarCitaMedica();
                     break;
                 case 6:
-                    modeloDatos.mostrarEmpleadoPlanilla();
+                    menuImprimir();
                     break;
                 case 7:
-                    modeloDatos.mostrarEmpleadoEventual();
+                    menuConsultar();
                     break;
                 case 8:
-                    modeloDatos.mostrarMedico();
                     break;
-                case 9:
-                    modeloDatos.mostrarPaciente();
-                    break;
-                case 10:
-                    modeloDatos.mostrarCitaMedica();
-                    break;
-                case 11:
-                    break;
-
                 default:
                     System.out.println("Ingrese una opcion valida");
                     break;

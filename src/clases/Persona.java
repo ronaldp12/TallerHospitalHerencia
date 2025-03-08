@@ -73,7 +73,7 @@ public class Persona {
     }
 
     public void imprimirDatosPersona(){
-        System.out.println("DNI:"+dni);
+        System.out.println("\nDNI:"+dni);
         System.out.println("Nombre:"+nombre);
         System.out.println("Apellido:"+apellido);
         System.out.println("Fecha Nacimiento:"+fechaNac);
@@ -82,7 +82,7 @@ public class Persona {
     }
 
     public void registrarDatos(){
-        dni= Integer.parseInt(JOptionPane.showInputDialog("\n\nIngrese el DNI"));
+        dni= Integer.parseInt(JOptionPane.showInputDialog("Ingrese el DNI"));
         nombre=JOptionPane.showInputDialog("Ingrese el nombre");
         apellido=JOptionPane.showInputDialog("Ingrese el apellido");
         fechaNac=JOptionPane.showInputDialog("Ingrese la fecha de nacimiento");

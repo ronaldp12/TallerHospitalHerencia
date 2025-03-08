@@ -26,7 +26,12 @@ public class Paciente extends Persona {
     }
 
     public void setNumHistoriaClinica(int numHistoriaClinica) {
-        this.numHistoriaClinica = numHistoriaClinica;
+        try {
+            this.numHistoriaClinica= Integer.parseInt(String.valueOf(numHistoriaClinica));
+        }catch (NumberFormatException e){
+            System.out.println("¡Error! El numero de la historia clinica debe ser un valor numerico");
+
+        }
     }
 
     public String getSexo() {
