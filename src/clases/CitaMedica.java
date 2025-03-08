@@ -1,6 +1,5 @@
-package general;
+package clases;
 
-import clases.Paciente;
 import empleado.Medico;
 
 import javax.swing.*;

@@ -1,5 +1,7 @@
 package general;
 
+import clases.CitaMedica;
+import clases.ModeloDatos;
 import clases.Paciente;
 import empleado.EmpleadoEventual;
 import empleado.EmpleadoPlanilla;
@@ -10,10 +12,6 @@ import java.util.ArrayList;
 
 public class Procesos {
 
-    ArrayList<Medico> medicos=new ArrayList<>();
-    ArrayList<EmpleadoEventual> empleadoEventuales=new ArrayList<>();
-    ArrayList<EmpleadoPlanilla> empleadoPlanillas=new ArrayList<>();
-    ArrayList<Paciente> pacientes=new ArrayList<>();
     ArrayList<CitaMedica> citasMedicas=new ArrayList<>();
     ModeloDatos modeloDatos;
     int opcion=0;
@@ -41,32 +39,27 @@ public class Procesos {
 
     }
 
-
     public void pedirDatosEmpleadoEventual(){
         EmpleadoEventual empleadoEventual= new EmpleadoEventual();
         empleadoEventual.registrarDatos();
-        empleadoEventuales.add(empleadoEventual);
         modeloDatos.registrarPersona(empleadoEventual);
     }
 
     public void pedirDatosEmpleadoPlanilla(){
         EmpleadoPlanilla empleadoPlanilla= new EmpleadoPlanilla();
         empleadoPlanilla.registrarDatos();
-        empleadoPlanillas.add(empleadoPlanilla);
         modeloDatos.registrarPersona(empleadoPlanilla);
     }
 
     public void pedirDatosMedico(){
         Medico medico=new Medico();
         medico.registrarDatos();
-        medicos.add(medico);
         modeloDatos.registrarPersona(medico);
     }
 
     public void pedirDatosPaciente(){
         Paciente paciente= new Paciente();
         paciente.registrarDatos();
-        pacientes.add(paciente);
         modeloDatos.registrarPersona(paciente);
     }
 
@@ -74,36 +67,6 @@ public class Procesos {
         CitaMedica citaMedica= new CitaMedica();
         citaMedica.registrarCitaMedica();
         citasMedicas.add(citaMedica);
-    }
-
-    public void mostrarEmpleadoPlanilla(){
-        for (EmpleadoPlanilla empleadoPlanilla: empleadoPlanillas){
-            empleadoPlanilla.ImprimirDatosEmpleadoPlanilla();
-        }
-    }
-
-    public void mostrarEmpleadoEventual(){
-        for (EmpleadoEventual empleadoEventual: empleadoEventuales){
-            empleadoEventual.imprimirDatosEmpleadoEventual();
-        }
-    }
-
-    public void mostrarMedico(){
-        for (Medico medico: medicos){
-            medico.imprimirDatosMedico();
-        }
-    }
-
-    public void mostrarPaciente(){
-        for (Paciente paciente: pacientes){
-            paciente.ImprimirDatosPaciente();
-        }
-    }
-
-    public void mostrarCitaMedica(){
-        for (CitaMedica citaMedica: citasMedicas){
-            citaMedica.imprimirCitaMedica();
-        }
     }
 
 
@@ -139,19 +102,19 @@ public class Procesos {
                     programarCitaMedica();
                     break;
                 case 6:
-                    mostrarEmpleadoPlanilla();
+                    modeloDatos.mostrarEmpleadoPlanilla();
                     break;
                 case 7:
-                    mostrarEmpleadoEventual();
+                    modeloDatos.mostrarEmpleadoEventual();
                     break;
                 case 8:
-                    mostrarMedico();
+                    modeloDatos.mostrarMedico();
                     break;
                 case 9:
-                    mostrarPaciente();
+                    modeloDatos.mostrarPaciente();
                     break;
                 case 10:
-                    mostrarCitaMedica();
+                    modeloDatos.mostrarCitaMedica();
                     break;
                 case 11:
                     break;

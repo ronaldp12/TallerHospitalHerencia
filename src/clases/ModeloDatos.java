@@ -1,6 +1,5 @@
-package general;
+package clases;
 
-import clases.Paciente;
 import empleado.EmpleadoEventual;
 import empleado.EmpleadoPlanilla;
 import empleado.Medico;
@@ -71,4 +70,66 @@ public class ModeloDatos {
         miCita.imprimirCitaMedica();
     }
 
+    public void mostrarEmpleadoPlanilla(){
+        System.out.println("Empleados de planilla registrados\n");
+
+        if (empleadoPlanillaMap.size()>0){
+            for (EmpleadoPlanilla empleadoPlanilla : empleadoPlanillaMap.values()) {
+                empleadoPlanilla.ImprimirDatosEmpleadoPlanilla();
+            }
+        }else {
+            System.out.println("No existen empleados de planilla registrados");
+        }
+
+    }
+
+    public void mostrarEmpleadoEventual(){
+        System.out.println("Empleados eventuales registrados\n");
+
+        if (empleadoEventualMap.size()>0){
+            for (EmpleadoEventual empleadoEventual: empleadoEventualMap.values()){
+                empleadoEventual.imprimirDatosEmpleadoEventual();
+            }
+        }else {
+            System.out.println("No existen empleados eventuales registrados");
+        }
+
+    }
+
+    public void mostrarMedico(){
+        System.out.println("Medicos registrados\n");
+        if (medicoMap.size()>0){
+            for (Medico medico: medicoMap.values()){
+                medico.imprimirDatosMedico();
+            }
+        }else {
+            System.out.println("No existen medicos registrados");
+        }
+
+    }
+
+    public void mostrarPaciente(){
+        System.out.println("Pacientes registrados\n");
+
+        if (pacientesMap.size()>0){
+            for (Paciente paciente: pacientesMap.values()){
+                paciente.ImprimirDatosPaciente();
+            }
+        }else {
+            System.out.println("No existen pacientes registrados");
+        }
+    }
+
+    public void mostrarCitaMedica(){
+
+        System.out.println("Citas Programadas\n");
+
+        if (citasMedicas.size()>0){
+            for (CitaMedica citaMedica: citasMedicas){
+                citaMedica.imprimirCitaMedica();
+            }
+        } else {
+            System.out.println("No existen citas medicas programadas");
+        }
+    }
 }
